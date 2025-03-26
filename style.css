@@ -24,6 +24,13 @@ body {
   background-color: var(--bg-color);
 }
 
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 12%;
+}
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -127,7 +134,6 @@ main .content {
   top: 50%;
   left: 20%;
   z-index: 5;
-  /* transform: translate (-50% , -50%); */
 }
 
 main .content h1 {
@@ -146,6 +152,75 @@ main .content h1 sup {
 
 main .content h1 span {
   color: #eb5939;
+}
+
+.hero_social_icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+
+.hero_social_icon::after {
+  content: "";
+  width: 1px;
+  height: 160px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5)
+  );
+  position: absolute;
+  top: -90%;
+  left: 50%;
+}
+
+.hero_social_icon::before {
+  content: "";
+  width: 1px;
+  height: 150px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.082),
+    rgb(255, 255, 255)
+  );
+  position: absolute;
+  top: 110%;
+  left: 50%;
+}
+
+.hero_social_icon i{
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: .5s;
+}
+
+.hero_social_icon i:nth-of-type(1):hover{
+  background-color: #eb5939;
+}
+
+.hero_social_icon i:nth-of-type(2):hover{
+  background-color: #ea4c89;
+}
+
+.hero_social_icon i:nth-of-type(3):hover{
+  background-color: #1769ff;
+}
+
+.hero_social_icon i:nth-of-type(4):hover{
+  background-color: #CD201F;
 }
 
 .full_menu {
@@ -388,4 +463,195 @@ main .content h1 span {
   cursor: pointer;
   color: #fff;
   font-size: 30px;
+}
+
+
+.model_cards{
+  margin-top: 50px;
+  margin-top: 269px
+}
+.model_cards .cards{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: .6s;
+}
+
+.model_cards .cards .card {
+  width: 30%;
+  height: 500px;
+  transition: .6s;
+}
+
+.model_cards .cards .card_img {
+  width: 100%;
+  height: 100%;
+  transition: .6s;
+}
+
+.model_cards .cards .card .card_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .6s;
+}
+
+.model_cards .cards .card:hover .card_img{
+  width: 100%;
+}
+
+.model_cards .cards .card:hover{
+  width: 100%;
+}
+
+.model_cards .cards .card:hover .card_img img{
+  width: 100%;
+}
+
+.model_cards .cards .card h2{
+  font-weight: 400;
+  color: #b7ab98;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1600px) {
+  .full_menu .Menu_container:nth-child(1) ul li a1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main .content {
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  main .content h1 {
+    font-size: 125px;
+    line-height: 115px;
+  }
+  main .content h1 sup {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main .content h1 {
+    font-size: 115px;
+    line-height: 115px;
+  }
+  .full_menu .Menu_container:nth-child(2) ul li a {
+    font-size: 30px;
+  }
+  .full_menu .Menu_container:nth-child(2) .Content p {
+    font-size: 20px;
+  }
+  .full_menu .Menu_container:nth-child(1) ul li a {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .content h1 {
+    font-size: 74px;
+    line-height: 60px;
+  }
+  main img {
+    width: 100%;
+  }
+  main .content {
+    width: 50%;
+  }
+  main {
+    min-height: 100vh;
+  }
+  .full_menu .Menu_container:nth-child(1) ul li {
+    padding-bottom: 23px;
+    margin-bottom: 10px;
+  }
+  main img {
+    height: 100vh;
+    object-fit: cover;
+  }
+  main .content {
+    top: 65%;
+    left: 25%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main .content {
+    top: 65%;
+    left: 15%;
+  }
+  main .content h1 {
+    font-size: 10vw;
+    line-height: 10vw;
+  }
+  ul li {
+    margin: 0 3px;
+  }
+  .full_menu .Menu_container:nth-child(1) ul li a {
+    font-size: 44px;
+  }
+  .full_menu .Menu_container:nth-child(2) .Content p {
+    font-size: 13px;
+  }
+  .logo img {
+    width: 60px;
+  }
+  nav {
+    padding: 0 8%;
+  }
+  button {
+    width: 0px;
+  }
+  .ri-close-line {
+    top: 10px;
+    right: 21px;
+    font-size: 22px;
+  }
 }
