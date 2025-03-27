@@ -48,3 +48,31 @@ Closebtn.addEventListener("click", () => {
 moon.addEventListener("click", () => {
   document.body.classList.toggle("activeTheme");
 });
+
+// FOLLOW ME SWIPER
+
+var swiper = new Swiper(".MySwiper", {
+  slidesPerView: 4,
+  spaceBetween: 0,
+  loop:true,
+  autoplay:{
+    delay:1200,
+  },
+  breakpoints:{
+    1300:{
+      slidesPerView: 4,
+    },
+    1200:{
+      slidesPerView: 3,
+    },
+    1100:{
+      slidesPerView: 2,
+    },
+    900:{
+      slidesPerView: 2,
+    },
+    0:{
+      slidesPerView: 1,
+    },
+  },
+});
