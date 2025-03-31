@@ -2,18 +2,16 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Portfólio Fotógrafo</title>
-
-    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Remix icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
-    <!-- Swiper Slider CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
@@ -23,17 +21,21 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <img src="Images/logo-white.webp" alt="" />
+          <img src="Images/logo-white.webp" alt="Logo" />
         </div>
 
         <ul>
-          <li><i class="ri-moon-clear-line"></i></li>
-          <li><button>Let's Talk</button></li>
-          <li><i class="ri-menu-line"></i></li>
+          <li><i class="ri-moon-clear-line theme-toggle"></i></li>
+          <li><button class="talk-btn">Let's Talk</button></li>
+          <li><i class="ri-menu-line menu-toggle"></i></li>
         </ul>
       </nav>
       <main>
-        <img src="Images/image.webp" alt="" />
+        <img
+          src="Images/image.webp"
+          alt="Fotografia principal"
+          class="hero-image"
+        />
 
         <div class="content">
           <h1>WORLD</h1>
@@ -43,17 +45,17 @@
           <h1><sup>The </sup>Years</h1>
         </div>
         <div class="hero_social_icon">
-          <i class="ri-dribbble-fill"></i>
-          <i class="ri-behance-line"></i>
-          <i class="ri-github-line"></i>
-          <i class="ri-youtube-line"></i>
+          <a href="#"><i class="ri-dribbble-fill"></i></a>
+          <a href="#"><i class="ri-behance-line"></i></a>
+          <a href="#"><i class="ri-github-line"></i></a>
+          <a href="#"><i class="ri-youtube-line"></i></a>
         </div>
       </main>
 
       <div class="full_menu">
-        <div class="Menu_container">
+        <div class="Menu_container left-menu">
           <div class="menuNav">
-            <img src="Images/logo-white.webp" alt="" />
+            <img src="Images/logo-white.webp" alt="Logo Menu" />
           </div>
 
           <ul>
@@ -64,7 +66,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
-        <div class="Menu_container">
+        <div class="Menu_container right-menu">
           <div class="Content">
             <p>+61404093</p>
             <p>hello Example@gmail.com</p>
@@ -76,7 +78,7 @@
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Github</a></li>
           </ul>
-          <i class="ri-close-line"></i>
+          <i class="ri-close-line close-menu"></i>
         </div>
       </div>
     </div>
@@ -87,28 +89,28 @@
         <!-- card 1 -->
         <div class="card">
           <div class="card_img">
-            <img src="Images/project-4-1.jpg" alt="" />
+            <img src="Images/project-4-1.jpg" alt="Brand Promotion" />
           </div>
           <h2>Brand Promotion</h2>
         </div>
         <!-- card 2 -->
         <div class="card">
           <div class="card_img">
-            <img src="Images/project-4-2.jpg" alt="" />
+            <img src="Images/project-4-2.jpg" alt="Commercial" />
           </div>
           <h2>Commercial</h2>
         </div>
         <!-- card 3 -->
         <div class="card">
           <div class="card_img">
-            <img src="Images/project-4-3.jpg" alt="" />
+            <img src="Images/project-4-3.jpg" alt="Wedding" />
           </div>
           <h2>Wedding</h2>
         </div>
         <!-- card 4 -->
         <div class="card">
           <div class="card_img">
-            <img src="Images/project-4-4.jpg" alt="" />
+            <img src="Images/project-4-4.jpg" alt="Portrait" />
           </div>
           <h2>Portrait</h2>
         </div>
@@ -132,14 +134,18 @@
             state of phase transition.
           </h3>
         </div>
-        <img src="Images/ab-4-1-shape.png" alt="" />
+        <img
+          src="Images/ab-4-1-shape.png"
+          alt="Decorative shape"
+          class="shape-img"
+        />
       </div>
       <div class="bottom_container">
         <div class="start_img">
-          <img src="Images/ab-4-1.jpg" alt="" />
+          <img src="Images/ab-4-1.jpg" alt="Emma Mitchell" />
         </div>
         <div class="mid_img">
-          <img src="Images/about.webp" alt="" />
+          <img src="Images/about.webp" alt="About Emma" />
         </div>
         <div class="end_content">
           <p>
@@ -154,26 +160,32 @@
               <h2>Years</h2>
               <h1><span>17</span>+</h1>
             </div>
-            
+
             <div class="line"></div>
-            
+
             <div class="exp_box">
               <div class="exp"></div>
               <h2>People</h2>
               <h1><span>100</span>+</h1>
             </div>
           </div>
+        </div>
       </div>
     </section>
 
     <!-- MARQUEE -->
-
     <marquee behavior="alternate" direction="">
-      <h1>Interior Photogaphy <i class="ri-shining-line"></i>Brand Promotion <i class="ri-shining-line"></i>
-      Events <i class="ri-shining-line"></i>Fastion <i class="ri-shining-line"></i>Family Shoots 
-      <i class="ri-shining-line"></i>Commercial <i class="ri-shining-line"></i> Brands 
-      <i class="ri-shining-line"></i>Gallerys <i class="ri-shining-line"></i>Entertaiment
-      <i class="ri-shining-line"></i>Cosplay Designer.</h1>
+      <h1>
+        Interior Photogaphy <i class="ri-shining-line"></i>Brand Promotion
+        <i class="ri-shining-line"></i> Events
+        <i class="ri-shining-line"></i>Fastion
+        <i class="ri-shining-line"></i>Family Shoots
+        <i class="ri-shining-line"></i>Commercial
+        <i class="ri-shining-line"></i> Brands
+        <i class="ri-shining-line"></i>Gallerys
+        <i class="ri-shining-line"></i>Entertaiment
+        <i class="ri-shining-line"></i>Cosplay Designer.
+      </h1>
     </marquee>
 
     <!-- EXPERTISE -->
@@ -188,179 +200,303 @@
         </div>
         <div class="mid_contain">
           <h1>EMMA <br />MITCHELL</h1>
-          <h3>
-            [The Projects I've Been Primarily Focused On Lately.]
-          </h3>
+          <h3>[The Projects I've Been Primarily Focused On Lately.]</h3>
         </div>
-        <img src="Images/ab-4-1-shape.png" alt="" />
+        <img
+          src="Images/ab-4-1-shape.png"
+          alt="Decorative shape"
+          class="shape-img"
+        />
       </div>
       <div class="catagory_container">
-
-                 <!-- BOX 1 -->
-                 <div class="catagory_box">
-                  <div class="catagory_info">
-                    <h3>2025</h3>
-                    <div class="catagory_det">
-                      <h2>Weeding</h2>
-                      <p>COLLACTIONS / DESIGN / WEDDING</p>
-                  </div>
-                 </div>
-                 <img src="Images/wedding.jpg" alt="" class="cata_img">
-        <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 10.3965H26" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-            <path d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-            <path d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-        </svg>
-       </div>
-         <!-- BOX 2 -->
-         <div class="catagory_box">
+        <!-- BOX 1 -->
+        <div class="catagory_box">
+          <div class="catagory_info">
+            <h3>2025</h3>
+            <div class="catagory_det">
+              <h2>Weeding</h2>
+              <p>COLLACTIONS / DESIGN / WEDDING</p>
+            </div>
+          </div>
+          <img
+            src="Images/wedding.jpg"
+            alt="Wedding Photography"
+            class="cata_img"
+          />
+          <svg
+            width="26"
+            height="21"
+            viewBox="0 0 26 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 10.3965H26"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+        <!-- BOX 2 -->
+        <div class="catagory_box">
           <div class="catagory_info">
             <h3>2025</h3>
             <div class="catagory_det">
               <h2>Events</h2>
               <p>COLLACTIONS / DESIGN / WEDDING</p>
+            </div>
           </div>
-         </div>
-         <img src="Images/event.jpg" alt="" class="cata_img">
-<svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 10.3965H26" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-</svg>
-      </div>
-
-         <!-- BOX 3 -->
-         <div class="catagory_box">
+          <img
+            src="Images/event.jpg"
+            alt="Event Photography"
+            class="cata_img"
+          />
+          <svg
+            width="26"
+            height="21"
+            viewBox="0 0 26 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 10.3965H26"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+        <!-- BOX 3 -->
+        <div class="catagory_box">
           <div class="catagory_info">
             <h3>2025</h3>
             <div class="catagory_det">
               <h2>Family Shoots</h2>
               <p>COLLACTIONS / DESIGN / WEDDING</p>
+            </div>
           </div>
-         </div>
-         <img src="Images/family.jpg" alt="" class="cata_img">
-<svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 10.3965H26" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-</svg>
-      </div>
-
-         <!-- BOX 4 -->
-         <div class="catagory_box">
+          <img
+            src="Images/family.jpg"
+            alt="Family Photography"
+            class="cata_img"
+          />
+          <svg
+            width="26"
+            height="21"
+            viewBox="0 0 26 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 10.3965H26"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+        <!-- BOX 4 -->
+        <div class="catagory_box">
           <div class="catagory_info">
             <h3>2025</h3>
             <div class="catagory_det">
               <h2>Cosmetic Store</h2>
               <p>COLLACTIONS / DESIGN / WEDDING</p>
+            </div>
           </div>
-         </div>
-         <img src="Images/cosmetic.jpg" alt="" class="cata_img">
-<svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 10.3965H26" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-</svg>
-      </div>
-
-         <!-- BOX 5 -->
-         <div class="catagory_box">
+          <img
+            src="Images/cosmetic.jpg"
+            alt="Cosmetic Photography"
+            class="cata_img"
+          />
+          <svg
+            width="26"
+            height="21"
+            viewBox="0 0 26 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 10.3965H26"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+        <!-- BOX 5 -->
+        <div class="catagory_box">
           <div class="catagory_info">
             <h3>2025</h3>
             <div class="catagory_det">
               <h2>Fashion</h2>
               <p>COLLACTIONS / DESIGN / WEDDING</p>
+            </div>
           </div>
-         </div>
-         <img src="Images/fashion.jpg" alt="" class="cata_img">
-<svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 10.3965H26" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-</svg>
-      </div>
+          <img
+            src="Images/fashion.jpg"
+            alt="Fashion Photography"
+            class="cata_img"
+          />
+          <svg
+            width="26"
+            height="21"
+            viewBox="0 0 26 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 10.3965H26"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M15.9387 0C15.9387 5.74655 20.4343 10.3965 26 10.3965"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+            <path
+              d="M26 10.3965C20.4343 10.3965 15.9387 15.0465 15.9387 20.793"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
       </div>
     </section>
 
     <!-- BG VIDEO -->
-
-    <video autoplay loop class="Model_video">
-      <source src="Images/BG-video.mp4">
+    <video autoplay loop muted class="Model_video">
+      <source src="Images/BG-video.mp4" type="video/mp4" />
     </video>
 
     <!-- FOLLOW -->
-  <section class="follow">
-    <div class="follow_info">
-      FOLLOW ME ON INSTAGRAM <span>@Instagram</span>
-    </div>
-    <!-- SWIPER -->
-    <div class="swiper MySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="insta_img">
-            <img src="Images/insta-1.jpg" alt="">
+    <section class="follow">
+      <div class="follow_info">
+        FOLLOW ME ON INSTAGRAM <span>@Instagram</span>
+      </div>
+      <!-- SWIPER -->
+      <div class="swiper MySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="insta_img">
+              <img src="Images/insta-1.jpg" alt="Instagram 1" />
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="insta_img">
-            <img src="Images/insta-2.jpg" alt="">
+          <div class="swiper-slide">
+            <div class="insta_img">
+              <img src="Images/insta-2.jpg" alt="Instagram 2" />
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="insta_img">
-            <img src="Images/insta-3.jpg" alt="">
+          <div class="swiper-slide">
+            <div class="insta_img">
+              <img src="Images/insta-3.jpg" alt="Instagram 3" />
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="insta_img">
-            <img src="Images/insta-4.jpg" alt="">
+          <div class="swiper-slide">
+            <div class="insta_img">
+              <img src="Images/insta-4.jpg" alt="Instagram 4" />
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="insta_img">
-            <img src="Images/insta-5.jpg" alt="">
+          <div class="swiper-slide">
+            <div class="insta_img">
+              <img src="Images/insta-5.jpg" alt="Instagram 5" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER  -->
-   <section class="footer">
-    <div class="footer_content">
-      <div class="head">
-        <h2>Subscribe and never miss out</h2>
-        <div class="inputs">
-          <input type="email" placeholder="Your Email">
-          <button>Subscribe</button>
+    <!-- FOOTER -->
+    <section class="footer">
+      <div class="footer_content">
+        <div class="head">
+          <h2>Subscribe and never miss out</h2>
+          <div class="inputs">
+            <input type="email" placeholder="Your Email" />
+            <button class="subscribe-btn">Subscribe</button>
+          </div>
+          <h2>Hello@yourWebsite.com</h2>
+          <div class="links">
+            <a href="#">FACEBOOK</a>
+            <a href="#">TWITTER</a>
+            <a href="#">INSTAGRAM</a>
+          </div>
         </div>
-        <h2>Hello@yourWebsite.com</h2>
-        <div class="links">
-          <a href="#">FACEBOOK</a>
-          <a href="#">TWITTER</a>
-          <a href="#">INSTAGRAM</a>
-        </div>
+        <marquee behavior="alternate" direction="">
+          <h1>
+            WENT TO REACH OUT <span>WENT TO REACH OUT</span> WENT TO REACH OUT
+            <span>WENT TO REACH OUT</span> WENT TO REACH OUT
+            <span>WENT TO REACH OUT</span>WENT TO REACH OUT
+            <span>WENT TO REACH OUT</span>
+          </h1>
+        </marquee>
       </div>
-      <marquee behavior="alternate" direction="">
-        <h1>WENT TO REACH OUT <span>WENT TO REACH OUT</span> WENT TO REACH OUT <span>WENT TO REACH OUT</span>
-          WENT TO REACH OUT <span>WENT TO REACH OUT</span>WENT TO REACH OUT <span>WENT TO REACH OUT</span></h1>
-      </marquee>
+    </section>
+
+    <!-- COPY RIGHT -->
+    <div class="copy_right">
+      <h2>Fernando Rodrigues © 2025. All right reserved.</h2>
+      <div class="footer_social_icon">
+        <a href="#"><i class="ri-github-line"></i></a>
+        <a href="#"><i class="ri-dribbble-fill"></i></a>
+        <a href="#"><i class="ri-behance-line"></i></a>
+        <a href="#"><i class="ri-youtube-line"></i></a>
+      </div>
     </div>
-   </section>
 
-   <!-- COPY RIGHT  -->
-   <div class="copy_right">
-    <h2>Fernando Rodrigues © 2025. All right reserved.</h2>
-    <div class="footer_social_icon">
-      <i class="ri-github-line"></i>
-      <i class="ri-dribbble-fill"></i>
-      <i class="ri-behance-line"></i>
-      <i class="ri-youtube-line"></i>
-    </div>
-   </div>
-
-
-    <!-- Swiper Slide JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
