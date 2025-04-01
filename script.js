@@ -16,21 +16,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".close-menu");
   const moon = document.querySelector(".theme-toggle");
 
+  // Verificar se é mobile
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
   // Open Menu
   bars.addEventListener("click", () => {
     menuWrapper.classList.add("activeWrapper");
-    leftContainer.classList.add("LeftMenuOpen");
-    rightContainer.classList.add("RightMenuOpen");
+    
+    if (isMobile()) {
+      leftContainer.style.width = "100%";
+      rightContainer.style.width = "100%";
+      leftContainer.style.opacity = "1";
+      rightContainer.style.opacity = "1";
+      leftContainer.style.zIndex = "1";
+      rightContainer.style.zIndex = "1";
+      
+      // Mostrar conteúdo imediatamente em mobile
+      rightMenuLis.forEach((li) => {
+        li.style.display = "flex";
+        li.style.opacity = "1";
+        li.style.transform = "none";
+      });
+      
+      leftMenuLis.forEach((li) => {
+        li.style.display = "flex";
+        li.style.opacity = "1";
+        li.style.transform = "none";
+      });
+      
+      rightContainerContent.style.display = "flex";
+      rightContainerContent.style.opacity = "1";
+      rightContainerContent.style.transform = "none";
+    } else {
+      leftContainer.classList.add("LeftMenuOpen");
+      rightContainer.classList.add("RightMenuOpen");
 
-    rightMenuLis.forEach((li) => {
-      li.classList.add("RightContentOpen");
-    });
+      rightMenuLis.forEach((li) => {
+        li.classList.add("RightContentOpen");
+      });
 
-    leftMenuLis.forEach((li) => {
-      li.classList.add("LeftContentOpen");
-    });
+      leftMenuLis.forEach((li) => {
+        li.classList.add("LeftContentOpen");
+      });
 
-    rightContainerContent.classList.add("menuDescOpen");
+      rightContainerContent.classList.add("menuDescOpen");
+    }
 
     // Disable scroll when menu is open
     document.body.style.overflow = "hidden";
@@ -39,8 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close Menu
   closeBtn.addEventListener("click", () => {
     menuWrapper.classList.remove("activeWrapper");
-    leftContainer.classList.remove("LeftMenuOpen");
-    rightContainer.classList.remove("RightMenuOpen");
+    
+    if (isMobile()) {
+      leftContainer.style.width = "0";
+      rightContainer.style.width = "0";
+      leftContainer.style.opacity = "0";
+      rightContainer.style.opacity = "0";
+      leftContainer.style.zIndex = "-1";
+      rightContainer.style.zIndex = "-1";
+    } else {
+      leftContainer.classList.remove("LeftMenuOpen");
+      rightContainer.classList.remove("RightMenuOpen");
+    }
 
     rightMenuLis.forEach((li) => {
       li.classList.remove("RightContentOpen");
@@ -73,33 +115,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("activeTheme");
   }
 
-  // Initialize Swiper
-  var swiper = new Swiper(".MySwiper", {
+  // Initialize Swiper with mobile adjustments
+  var swiperOptions = {
     slidesPerView: 4,
     spaceBetween: 0,
     loop: true,
     autoplay: {
-      delay: 1200,
+      delay: isMobile() ? 2000 : 1200,
       disableOnInteraction: false,
     },
     breakpoints: {
-      1600: {
-        slidesPerView: 4,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-      900: {
-        slidesPerView: 2,
-      },
-      600: {
-        slidesPerView: 2,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
+      1600: { slidesPerView: 4 },
+      1200: { slidesPerView: 3 },
+      900: { slidesPerView: 2 },
+      600: { slidesPerView: 2 },
+      0: { slidesPerView: 1 }
+    }
+  };
+
+  var swiper = new Swiper(".MySwiper", swiperOptions);
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -120,6 +154,11 @@ document.addEventListener("DOMContentLoaded", function () {
     video.muted = true;
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
+    
+    // Reduzir qualidade em mobile se necessário
+    if (isMobile()) {
+      video.setAttribute("poster", "Images/video-poster-mobile.jpg");
+    }
   }
 
   // Handle window resize
@@ -131,5 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       closeBtn.click();
     }
+    
+    // Reinitialize Swiper with new settings if needed
+    swiper.update();
   });
 });

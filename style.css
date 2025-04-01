@@ -132,10 +132,7 @@ main {
 }
 
 .hero-image {
-  filter: grayscale(100%);
   width: auto;
-  height: auto;
-  object-fit: cover;
 }
 
 main::after {
@@ -995,7 +992,6 @@ marquee i {
   transition: all 0.3s ease;
 }
 
-/* TESTE */
 .subscribe-btn:hover{
   color: #eb5939;
   background-color: #505050;
@@ -1297,16 +1293,28 @@ marquee i {
 @media screen and (max-width: 480px) {
   nav {
     padding: 0 5%;
+    height: 70px;
   }
 
   .logo img {
-    width: 60px;
+    width: 50px;
+  }
+
+  .hero-image{
+    width: 100vh;
   }
 
   .talk-btn {
     width: 90px;
     font-size: 0.8rem;
   }
+
+  .model_cards .cards .card .card_img img {
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    transition: 0.6s;
+}
 
   .theme-toggle,
   .menu-toggle {
@@ -1315,25 +1323,25 @@ marquee i {
   }
 
   main .content h1 {
-    font-size: 3rem;
-    line-height: 2.8rem;
+    font-size: 4.5rem;
+    line-height: 3.3rem;
   }
 
   main .content h1 sup {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .hero_social_icon {
-    top: 50%;
+    top: 31%;
     left: 3%;
   }
 
   .full_menu .left-menu ul li a {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .full_menu .right-menu .Content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .close-menu {
@@ -1347,12 +1355,12 @@ marquee i {
   }
 
   .mid_contain h1 {
-    font-size: 4rem;
-    line-height: 3.8rem;
+    font-size: 3.5rem;
+    line-height: 3.3rem;
   }
 
   .mid_contain h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .experince {
@@ -1391,7 +1399,7 @@ marquee i {
 
   .inputs input {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #292929;
     border-radius: 50px;
     margin-bottom: 10px;
@@ -1405,8 +1413,8 @@ marquee i {
   }
 
   .footer_content marquee h1 {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 3rem;
+    line-height: 2.8rem;
   }
 
   marquee h1 {
@@ -1416,5 +1424,44 @@ marquee i {
   .links {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* Menu Mobile */
+@media screen and (max-width: 768px) {
+  .full_menu {
+    flex-direction: column;
+  }
+  
+  .full_menu .left-menu,
+  .full_menu .right-menu {
+    width: 100% !important;
+    height: auto;
+  }
+  
+  .full_menu .left-menu {
+    padding-bottom: 30px;
+  }
+  
+  .full_menu .right-menu {
+    padding-top: 30px;
+  }
+  
+  .LeftMenuOpen, .RightMenuOpen {
+    animation: none;
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+  
+  .full_menu .left-menu ul li,
+  .full_menu .right-menu ul li {
+    animation-delay: 0s !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  
+  .menuDescOpen {
+    animation: none !important;
+    transform: none !important;
   }
 }
