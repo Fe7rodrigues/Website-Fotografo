@@ -1,3 +1,30 @@
+document.addEventListener("DOMContentLoaded", function() {
+  // Criar elemento de loading
+  const loadingScreen = document.createElement('div');
+  loadingScreen.className = 'loading';
+  loadingScreen.innerHTML = '<div class="loading-spinner"></div>';
+  document.body.appendChild(loadingScreen);
+
+  // Esconder o loading quando tudo carregar
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      loadingScreen.classList.add('hidden');
+      
+      // Remover completamente após a animação
+      setTimeout(function() {
+        loadingScreen.remove();
+      }, 500); // Deve corresponder ao tempo da transição CSS
+    }, 1000); // Tempo mínimo de exibição
+  });
+
+  // Fallback: remover após 5 segundos mesmo se o load não disparar
+  setTimeout(function() {
+    if (document.body.contains(loadingScreen) && !loadingScreen.classList.contains('hidden')) {
+      loadingScreen.remove();
+    }
+  }, 5000);
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Menu Elements
   const leftMenuLis = document.querySelectorAll(".full_menu .left-menu ul li");

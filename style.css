@@ -19,6 +19,39 @@
   --text-color: #fff;
 }
 
+/* LOADING OTIMIZADO */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eb5939;
+  border-radius: 50%;
+  border-top-color: var(--accent-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1255,6 +1288,7 @@ marquee i {
   .model_cards .cards {
     flex-wrap: wrap;
     gap: 30px;
+    
   }
 
   .model_cards .cards .card {
@@ -1309,12 +1343,7 @@ marquee i {
     font-size: 0.8rem;
   }
 
-  .model_cards .cards .card .card_img img {
-    width: 70%;
-    height: 50%;
-    object-fit: cover;
-    transition: 0.6s;
-}
+  
 
   .theme-toggle,
   .menu-toggle {
@@ -1465,3 +1494,101 @@ marquee i {
     transform: none !important;
   }
 }
+
+/* RESET INICIAL - Garante que não haja estilos conflitantes */
+.model_cards,
+.model_cards * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONTAINER PRINCIPAL */
+.model_cards {
+  width: 100%;
+  padding: 20px 15px;
+  margin: 0 auto;
+  background-color: transparent; /* Só para visualização */
+}
+
+/* GRADE DE CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD INDIVIDUAL */
+.card {
+  height: 160px; /* Altura reduzida */
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+}
+
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card h2 {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  color: white;
+  font-size: 0.9rem;
+  background-color: rgba(0,0,0,0.7);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+/* MEDIA QUERIES ESPECÍFICAS */
+@media (min-width: 480px) {
+  .card {
+    height: 180px;
+  }
+  .card h2 {
+    font-size: 1rem;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    gap: 15px;
+  }
+  .card {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .model_cards {
+    padding: 30px 20px;
+  }
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    height: 220px;
+  }
+}
+
+
+
+
+/* TESTE */
+
