@@ -133,8 +133,8 @@ main {
 
 .hero-image {
   filter: grayscale(100%);
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
 }
 
@@ -150,8 +150,8 @@ main::after {
 
 main .content {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 78%;
+  left: 30%;
   z-index: 5;
   transform: translateY(-50%);
 }
@@ -181,7 +181,7 @@ main .content h1 span {
   gap: 10px;
   position: absolute;
   top: 35%;
-  left: 5%;
+  left: 2%;
   z-index: 5;
 }
 
@@ -292,7 +292,7 @@ main .content h1 span {
 .full_menu .left-menu ul {
   display: flex;
   flex-direction: column;
-  margin-top: 90px;
+  margin-top: 19px;
 }
 
 .full_menu .left-menu ul li {
@@ -688,6 +688,10 @@ main .content h1 span {
   width: 100%;
 }
 
+.mid_img{
+  width: 50%;
+}
+
 .mid_contain h1 {
   font-size: 8rem;
   line-height: 8rem;
@@ -833,7 +837,7 @@ marquee i {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  width: 45%;
+  width: 10%;
 }
 
 .catagory_box:hover svg {
@@ -866,6 +870,8 @@ marquee i {
 .catagory_det p {
   font-size: 0.9rem;
   color: rgba(183, 171, 152, 0.6);
+  white-space: nowrap; 
+  margin: 0; 
 }
 
 /* BG VIDEO */
@@ -987,6 +993,12 @@ marquee i {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+/* TESTE */
+.subscribe-btn:hover{
+  color: #eb5939;
+  background-color: #505050;
 }
 
 .head h2:nth-of-type(2) {
