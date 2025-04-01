@@ -202,3 +202,18 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.update();
   });
 });
+
+
+// Comportamento de hover igual à extensão
+document.addEventListener('DOMContentLoaded', () => {
+  const style = document.createElement('style');
+  style.textContent = `
+    ::-webkit-scrollbar-thumb {
+      opacity: 0.6;
+    }
+    :hover::-webkit-scrollbar-thumb {
+      opacity: 1;
+    }
+  `;
+  document.head.appendChild(style);
+});

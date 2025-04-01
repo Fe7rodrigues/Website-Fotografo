@@ -119,6 +119,7 @@ nav ul {
 .talk-btn {
   height: 35px;
   width: 120px;
+  border-radius: 5px;
   background-color: #fff;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   color: #1e1e1e;
@@ -1576,7 +1577,7 @@ marquee i {
 
 @media (min-width: 1024px) {
   .model_cards {
-    padding: 30px 20px;
+    padding: 120px 20px 0px 0px;
   }
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1587,8 +1588,34 @@ marquee i {
   }
 }
 
+/* SCROLLBAR */
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #111010;
+}
 
+*::-webkit-scrollbar-track:hover {
+  background-color: #292929;
+}
 
+*::-webkit-scrollbar-track:active {
+  background-color: #505050;
+}
 
-/* TESTE */
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #eb5939;
+}
 
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #eb5941;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #eb5945;
+}
