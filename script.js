@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+/* ============ LOADING SCREEN ============ */
+document.addEventListener("DOMContentLoaded", function () {
   // Criar elemento de loading
   const loadingScreen = document.createElement('div');
   loadingScreen.className = 'loading';
@@ -6,39 +7,36 @@ document.addEventListener("DOMContentLoaded", function() {
   document.body.appendChild(loadingScreen);
 
   // Esconder o loading quando tudo carregar
-  window.addEventListener('load', function() {
-    setTimeout(function() {
+  window.addEventListener('load', function () {
+    setTimeout(function () {
       loadingScreen.classList.add('hidden');
-      
+
       // Remover completamente após a animação
-      setTimeout(function() {
+      setTimeout(function () {
         loadingScreen.remove();
-      }, 500); // Deve corresponder ao tempo da transição CSS
-    }, 1000); // Tempo mínimo de exibição
+      }, 500);
+    }, 1000);
   });
 
   // Fallback: remover após 5 segundos mesmo se o load não disparar
-  setTimeout(function() {
+  setTimeout(function () {
     if (document.body.contains(loadingScreen) && !loadingScreen.classList.contains('hidden')) {
       loadingScreen.remove();
     }
   }, 5000);
 });
 
+/* ============ MENU PRINCIPAL ============ */
 document.addEventListener("DOMContentLoaded", function () {
-  // Menu Elements
+  // Elementos do Menu
   const leftMenuLis = document.querySelectorAll(".full_menu .left-menu ul li");
-  const rightMenuLis = document.querySelectorAll(
-    ".full_menu .right-menu ul li"
-  );
+  const rightMenuLis = document.querySelectorAll(".full_menu .right-menu ul li");
   const leftContainer = document.querySelector(".full_menu .left-menu");
   const rightContainer = document.querySelector(".full_menu .right-menu");
-  const rightContainerContent = document.querySelector(
-    ".full_menu .right-menu .Content"
-  );
+  const rightContainerContent = document.querySelector(".full_menu .right-menu .Content");
   const menuWrapper = document.querySelector(".full_menu");
 
-  // Toggle Buttons
+  // Botões de Controle
   const bars = document.querySelector(".menu-toggle");
   const closeBtn = document.querySelector(".close-menu");
   const moon = document.querySelector(".theme-toggle");
@@ -48,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return window.innerWidth <= 768;
   }
 
-  // Open Menu
+  /* ============ ABRIR MENU ============ */
   bars.addEventListener("click", () => {
     menuWrapper.classList.add("activeWrapper");
-    
+
     if (isMobile()) {
       leftContainer.style.width = "100%";
       rightContainer.style.width = "100%";
@@ -59,20 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
       rightContainer.style.opacity = "1";
       leftContainer.style.zIndex = "1";
       rightContainer.style.zIndex = "1";
-      
+
       // Mostrar conteúdo imediatamente em mobile
       rightMenuLis.forEach((li) => {
         li.style.display = "flex";
         li.style.opacity = "1";
         li.style.transform = "none";
       });
-      
+
       leftMenuLis.forEach((li) => {
         li.style.display = "flex";
         li.style.opacity = "1";
         li.style.transform = "none";
       });
-      
+
       rightContainerContent.style.display = "flex";
       rightContainerContent.style.opacity = "1";
       rightContainerContent.style.transform = "none";
@@ -91,14 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
       rightContainerContent.classList.add("menuDescOpen");
     }
 
-    // Disable scroll when menu is open
+    // Desativar scroll quando o menu está aberto
     document.body.style.overflow = "hidden";
   });
 
-  // Close Menu
+  /* ============ FECHAR MENU ============ */
   closeBtn.addEventListener("click", () => {
     menuWrapper.classList.remove("activeWrapper");
-    
+
     if (isMobile()) {
       leftContainer.style.width = "0";
       rightContainer.style.width = "0";
@@ -121,15 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rightContainerContent.classList.remove("menuDescOpen");
 
-    // Enable scroll when menu is closed
+    // Ativar scroll quando o menu está fechado
     document.body.style.overflow = "auto";
   });
 
-  // Toggle Theme
+  /* ============ ALTERAR TEMA ============ */
   moon.addEventListener("click", () => {
     document.body.classList.toggle("activeTheme");
 
-    // Save theme preference to localStorage
+    // Salvar preferência de tema no localStorage
     if (document.body.classList.contains("activeTheme")) {
       localStorage.setItem("theme", "dark");
     } else {
@@ -137,12 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Check for saved theme preference
+  // Verificar tema salvo
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("activeTheme");
   }
 
-  // Initialize Swiper with mobile adjustments
+  /* ============ INICIALIZAR SWIPER ============ */
   var swiperOptions = {
     slidesPerView: 4,
     spaceBetween: 0,
@@ -162,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var swiper = new Swiper(".MySwiper", swiperOptions);
 
-  // Smooth scrolling for anchor links
+  /* ============ SCROLL SUAVE ============ */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -175,36 +173,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Make video muted to enable autoplay on mobile
+  /* ============ CONFIGURAÇÃO DE VÍDEO ============ */
   const video = document.querySelector(".Model_video");
   if (video) {
     video.muted = true;
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
-    
+
     // Reduzir qualidade em mobile se necessário
     if (isMobile()) {
       video.setAttribute("poster", "Images/video-poster-mobile.jpg");
     }
   }
 
-  // Handle window resize
+  /* ============ REDIMENSIONAMENTO DE TELA ============ */
   window.addEventListener("resize", function () {
-    // Close menu if screen size increases beyond mobile
-    if (
-      window.innerWidth > 768 &&
-      menuWrapper.classList.contains("activeWrapper")
-    ) {
+    // Fechar menu se o tamanho da tela aumentar além do mobile
+    if (window.innerWidth > 768 && menuWrapper.classList.contains("activeWrapper")) {
       closeBtn.click();
     }
-    
-    // Reinitialize Swiper with new settings if needed
+
+    // Re-inicializar Swiper com novas configurações se necessário
     swiper.update();
   });
 });
 
-
-// Comportamento de hover igual à extensão
+/* ============ SCROLLBAR HOVER ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const style = document.createElement('style');
   style.textContent = `
@@ -216,4 +210,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   `;
   document.head.appendChild(style);
+});
+
+/* ============ MENU MOBILE ============ */
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile_menu');
+const mobileCloseMenu = document.querySelector('.mobile_close_menu');
+
+function toggleMenu() {
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+menuToggle.addEventListener('click', toggleMenu);
+mobileCloseMenu.addEventListener('click', toggleMenu);
+
+// Fechar menu ao clicar em links
+document.querySelectorAll('.mobile_menu_list a').forEach(link => {
+  link.addEventListener('click', toggleMenu);
+});
+
+// Fechar menu ao redimensionar para desktop
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 720 && mobileMenu.classList.contains('active')) {
+    toggleMenu();
+  }
 });
