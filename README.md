@@ -34,3 +34,5 @@ Portfólio profissional para o fotógrafo, destacando seus trabalhos em casament
   - `Poppins` (corpo de texto)
   - `Playfair Display` (títulos)
 
+© 2025 Fernando Rodrigues. Todos os direitos reservados.
+Este projeto é para uso pessoal e profissional, não redistribuir.
